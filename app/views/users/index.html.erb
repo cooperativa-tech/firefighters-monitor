@@ -1,3 +1,7 @@
 <% @users.each do |user| %>
-  <p><%= user.email %></p>
+  <div data-controller="user" data-user-id=<%= user.id %>>
+    <span><%= user.email %></span>
+    <span data-target="user.status"><%= user.status %></span>
+    <button data-action="user#toggleStatus">Toggle Status</button>
+  </div>
 <% end %>
