@@ -111,5 +111,5 @@ Lint/RaiseException:
 Lint/StructNewOverride:
   Enabled: true
 
-Rails/HasAndBelongsToMany:
-  Enabled: false
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
