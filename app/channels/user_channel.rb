@@ -9,6 +9,6 @@ class UserChannel < ApplicationCable::Channel
     @user.status = @user.unavailable? ? "available" : "unavailable"
     @user.save
 
-    UserChannel.broadcast_to(@user, user: @user)
+    UserChannel.broadcast_to(@user, status: @user.status)
   end
 end

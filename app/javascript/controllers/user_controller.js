@@ -13,9 +13,7 @@ export default class extends Controller {
   };
 
   handleStatusUpdate = (data) => {
-    const {
-      user: { status },
-    } = data;
+    const { status } = data;
 
     this.statusTarget.innerHTML = status;
   };
