@@ -17,7 +17,7 @@
     </div>
 
     <% if current_user %>
-      <%= button_to "Sign Out", logout_path %>
+      <%= button_to "Sign Out", logout_path, remote: true %>
     <% end %>
 
     <%= yield %>
