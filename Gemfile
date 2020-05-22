@@ -17,6 +17,7 @@ gem "webpacker", "~> 5.1.1"
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
   gem "database_cleaner"
+  gem "dotenv"
   gem "factory_bot_rails"
   gem "faker"
   gem "rspec-rails", "~> 4.0.0"
