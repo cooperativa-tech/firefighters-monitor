@@ -15,5 +15,4 @@ const controllers = definitionsFromContext(context).concat(
   definitionsFromContext(componentsContext)
 );
 
-console.log(controllers);
 application.load(controllers);
