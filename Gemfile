@@ -12,6 +12,7 @@ gem "sass-rails", ">= 6"
 gem "sorcery"
 gem "turbolinks", "~> 5"
 gem "turbolinks_render"
+gem "view_component"
 gem "webpacker", "~> 5.1.1"
 
 group :development, :test do

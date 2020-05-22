@@ -10,11 +10,7 @@
   </head>
 
   <body>
-    <div id="flash">
-      <% flash.each do |key, value| %>
-        <div class="flash <%= key %>"><%= value %></div>
-      <% end %>
-    </div>
+    <%= render(FlashMessageComponent.new(flash: flash)) %>
 
     <% if current_user %>
       <%= button_to "Sign Out", logout_path, remote: true %>

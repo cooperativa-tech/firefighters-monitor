@@ -1,0 +1,20 @@
+.Flash {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+
+  display: inline;
+  padding: 0.5rem;
+
+  color: white;
+
+  transform: translateX(-50%);
+}
+
+.Flash-notice {
+  background-color: cadetblue;
+}
+
+.Flash-alert {
+  background-color: red;
+}
