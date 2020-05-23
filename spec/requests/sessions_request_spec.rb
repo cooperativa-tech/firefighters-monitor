@@ -8,23 +8,23 @@ RSpec.describe "Sessions", type: :request do
       expect(response.status).to eq(200)
     end
 
-    it "redirects to users_path if already logged in" do
+    it "redirects to root_path if already logged in" do
       user = create(:user)
       login_user(user)
 
       get login_path
 
-      expect(response).to redirect_to(users_path)
+      expect(response).to redirect_to(root_path)
     end
   end
 
   describe "POST #create" do
-    it "redirects to users_path on a successful login" do
+    it "redirects to root_path on a successful login" do
       user = create(:user)
 
       post login_path, params: { user: { username: user.username, password: "foobar" } }
 
-      expect(response).to redirect_to(users_path)
+      expect(response).to redirect_to(root_path)
     end
 
     it "renders the login template if login is bad" do

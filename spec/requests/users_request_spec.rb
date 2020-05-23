@@ -6,7 +6,7 @@ RSpec.describe "Users", type: :request do
       users = create_list(:user, 3)
       login_user(users.first)
 
-      get users_path
+      get root_path
 
       users.each do |user|
         expect(response.body).to include(user.username)
@@ -14,7 +14,7 @@ RSpec.describe "Users", type: :request do
     end
 
     it "sends user to login screen if not logged in" do
-      get users_path
+      get root_path
 
       expect(response).to redirect_to(login_path)
     end

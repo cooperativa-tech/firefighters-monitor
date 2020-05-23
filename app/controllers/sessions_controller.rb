@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 
   def new
     if current_user
-      redirect_to(users_path)
+      redirect_to(root_path)
 
       return
     end
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     logged_in = login(user_params[:username], user_params[:password])
 
     if logged_in
-      redirect_to(users_path, notice: "Login successful")
+      redirect_to(root_path, notice: "Login successful")
     else
       flash.now[:alert] = "Login failed"
 
