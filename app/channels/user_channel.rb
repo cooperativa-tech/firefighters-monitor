@@ -6,9 +6,8 @@ class UserChannel < ApplicationCable::Channel
   end
 
   def toggle
-    @user.status = @user.unavailable? ? "available" : "unavailable"
-    @user.save
+    new_status = @user.toggle_status
 
-    UserChannel.broadcast_to(@user, status: @user.status)
+    UserChannel.broadcast_to(@user, status: new_status)
   end
 end
