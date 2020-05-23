@@ -1,3 +1,1 @@
-FirefightersMonitor::Application.config.session_store :cookie_store, key: '_firefighters_monitor_session',
-                                                       secure: Rails.env.production?,
-                                                       same_site: :strict
+Rails.application.config.session_store :active_record_store, key: "_firefighters_monitor_session"
