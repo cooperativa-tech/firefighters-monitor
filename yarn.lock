@@ -778,7 +778,7 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@rails/actioncable@^6.0.0":
+"@rails/actioncable@>= 6.0", "@rails/actioncable@^6.0.0":
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.0.3.tgz#722b4b639936129307ddbab3a390f6bcacf3e7bc"
   integrity sha512-I01hgqxxnOgOtJTGlq0ZsGJYiTEEiSGVEGQn3vimZSqEP1HqzyFNbzGTq14Xdyeow2yGJjygjoFF1pmtE+SQaw==
@@ -1601,6 +1601,13 @@ bytes@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
+
+"cable_ready@>= 4.1.2":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/cable_ready/-/cable_ready-4.1.2.tgz#465eb1e5b851a5d1cec72726226c62c55261b616"
+  integrity sha512-F6hJBSsEjN2voJiUZoM05cplB49AIaXk3oHVZptPG2bbw+HLbiR3jU3SSslnm4VIKSfPzfvPHlyU16kuiro6JA==
+  dependencies:
+    morphdom "^2.5.12"
 
 cacache@^12.0.2:
   version "12.0.4"
@@ -4485,6 +4492,11 @@ mixin-deep@^1.2.0:
   dependencies:
     minimist "^1.2.5"
 
+morphdom@^2.5.12:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/morphdom/-/morphdom-2.6.1.tgz#e868e24f989fa3183004b159aed643e628b4306e"
+  integrity sha512-Y8YRbAEP3eKykroIBWrjcfMw7mmwJfjhqdpSvoqinu8Y702nAwikpXcNFDiIkyvfCLxLM9Wu95RZqo4a9jFBaA==
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -6730,13 +6742,22 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
-stimulus@^1.1.1:
+"stimulus@>= 1.1", stimulus@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stimulus/-/stimulus-1.1.1.tgz#53c2fded6849e7b85eed3ed8dd76e33abd74bec5"
   integrity sha512-R0mBqKp48YnRDZOxZ8hiOH4Ilph3Yj78CIFTBkCwyHs4iGCpe7xlEdQ7cjIxb+7qVCSxFKgxO+mAQbsNgt/5XQ==
   dependencies:
     "@stimulus/core" "^1.1.1"
     "@stimulus/webpack-helpers" "^1.1.1"
+
+stimulus_reflex@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/stimulus_reflex/-/stimulus_reflex-3.2.1.tgz#480b468ab59eb6605bda984cb8b10a6efecf5d85"
+  integrity sha512-oTlcu9ArZic1BZ7rWkTgDdYVWsdODv85dEKsAdcOLBarfOrosYkH1jfYfNXpFHuYj8alZcs+4URTNckLui1XuQ==
+  dependencies:
+    "@rails/actioncable" ">= 6.0"
+    cable_ready ">= 4.1.2"
+    stimulus ">= 1.1"
 
 stream-browserify@^2.0.1:
   version "2.0.2"

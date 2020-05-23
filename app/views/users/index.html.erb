@@ -1,7 +1,28 @@
-<% @users.each do |user| %>
-  <div data-controller="user" data-user-id=<%= user.id %>>
-    <span><%= user.email %></span>
-    <span data-target="user.status"><%= user.status %></span>
-    <button data-action="user#toggleStatus">Toggle Status</button>
+<div class="Users">
+  <div class="Users-list">
+    <% @users.each do |user| %>
+      <div data-controller="user" data-user-id=<%= user.id %>>
+        <span><%= user.email %></span>
+        <span data-target="user.status"><%= user.status %></span>
+        <button
+          data-user_id="<%= user.id %>"
+          data-reflex="click->UserReflex#toggle_status"
+        >Toggle Status</button>
+      </div>
+    <% end %>
   </div>
-<% end %>
+
+  <div class="Users-statuses">
+    <h2><%= t("available") %></h2>
+
+    <% @available_users.each do |user| %>
+      <p><%= user.email %></p>
+    <% end %>
+
+    <h2><%= t("service") %></h2>
+
+    <% @service_users.each do |user| %>
+      <p><%= user.email %></p>
+    <% end %>
+  </div>
+</div>
