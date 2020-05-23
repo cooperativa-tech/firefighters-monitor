@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_21_174323) do
+ActiveRecord::Schema.define(version: 2020_05_23_133903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string "email", null: false
+    t.string "username", null: false
     t.string "role", default: "regular", null: false
     t.string "crypted_password"
     t.string "salt"
@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 2020_05_21_174323) do
     t.string "remember_me_token"
     t.datetime "remember_me_token_expires_at"
     t.string "status", default: "unavailable", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["remember_me_token"], name: "index_users_on_remember_me_token"
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end

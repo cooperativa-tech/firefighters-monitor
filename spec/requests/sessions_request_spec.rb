@@ -22,7 +22,7 @@ RSpec.describe "Sessions", type: :request do
     it "redirects to users_path on a successful login" do
       user = create(:user)
 
-      post login_path, params: { user: { email: user.email, password: "foobar" } }
+      post login_path, params: { user: { username: user.username, password: "foobar" } }
 
       expect(response).to redirect_to(users_path)
     end
@@ -30,7 +30,7 @@ RSpec.describe "Sessions", type: :request do
     it "renders the login template if login is bad" do
       user = create(:user)
 
-      post login_path, params: { user: { email: user.email, password: "bad_password" } }
+      post login_path, params: { user: { username: user.username, password: "bad_password" } }
 
       expect(response).to render_template(:new)
       expect(response).to have_http_status(:unauthorized)

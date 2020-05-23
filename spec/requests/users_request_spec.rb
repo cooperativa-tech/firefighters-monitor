@@ -9,7 +9,7 @@ RSpec.describe "Users", type: :request do
       get users_path
 
       users.each do |user|
-        expect(response.body).to include(user.email)
+        expect(response.body).to include(user.username)
       end
     end
 

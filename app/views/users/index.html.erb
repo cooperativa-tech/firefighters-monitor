@@ -2,7 +2,7 @@
   <div class="Users-list">
     <% @users.each do |user| %>
       <div data-controller="user" data-user-id=<%= user.id %>>
-        <span><%= user.email %></span>
+        <span><%= user.username %></span>
         <span data-target="user.status"><%= user.status %></span>
         <button
           data-user_id="<%= user.id %>"
@@ -16,13 +16,13 @@
     <h2><%= t("available") %></h2>
 
     <% @available_users.each do |user| %>
-      <p><%= user.email %></p>
+      <p><%= user.username %></p>
     <% end %>
 
     <h2><%= t("service") %></h2>
 
     <% @service_users.each do |user| %>
-      <p><%= user.email %></p>
+      <p><%= user.username %></p>
     <% end %>
   </div>
 </div>

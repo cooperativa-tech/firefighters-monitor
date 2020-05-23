@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    logged_in = login(user_params[:email], user_params[:password])
+    logged_in = login(user_params[:username], user_params[:password])
 
     if logged_in
       redirect_to(users_path, notice: "Login successful")
@@ -33,6 +33,6 @@ class SessionsController < ApplicationController
   private
 
   def user_params
-    @_user_params ||= params.require(:user).permit(:email, :password)
+    @_user_params ||= params.require(:user).permit(:username, :password)
   end
 end

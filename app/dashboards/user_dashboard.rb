@@ -5,7 +5,7 @@ class UserDashboard < Administrate::BaseDashboard
     id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    email: Field::String,
+    username: Field::String,
     role: EnumField,
     password: Field::Password,
     password_confirmation: Field::Password
@@ -13,21 +13,21 @@ class UserDashboard < Administrate::BaseDashboard
 
   COLLECTION_ATTRIBUTES = %i[
     id
-    email
+    username
     created_at
     updated_at
   ].freeze
 
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    email
+    username
     role
     updated_at
   ].freeze
 
   FORM_ATTRIBUTES = %i[
     role
-    email
+    username
     password
     password_confirmation
   ].freeze
