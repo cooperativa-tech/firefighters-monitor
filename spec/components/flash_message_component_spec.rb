@@ -1,13 +1,21 @@
 require "rails_helper"
 
 RSpec.describe FlashMessageComponent, type: :component do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "doesn't render anything if no flash is present" do
+    component = FlashMessageComponent.new(flash: nil)
 
-  # it "renders something useful" do
-  #   expect(
-  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
-  #   ).to include(
-  #     "Hello, components!"
-  #   )
-  # end
+    render_inline(component).to_html
+
+    expect(rendered_component).to eq("")
+  end
+
+  it "renders something useful" do
+    flash = ActionDispatch::Flash::FlashHash.new({ alert: "alert!", notice: "notice!" })
+    component = FlashMessageComponent.new(flash: flash)
+
+    render_inline(component)
+
+    expect(rendered_component).to have_css(".Flash.Flash-alert", text: "alert!")
+    expect(rendered_component).to have_css(".Flash.Flash-notice", text: "notice!")
+  end
 end

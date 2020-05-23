@@ -4,6 +4,6 @@ class FlashMessageComponent < ViewComponent::Base
   end
 
   def render?
-    @flash.present?
+    @flash&.keys&.count&.positive?
   end
 end

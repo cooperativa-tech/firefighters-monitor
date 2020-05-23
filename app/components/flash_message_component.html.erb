@@ -1,5 +1,5 @@
 <div data-controller="flash-message">
-  <% flash.each do |key, value| %>
+  <% @flash.each do |key, value| %>
     <div class="Flash Flash-<%= key %>">
       <%= value %>
 

@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index]
 
-  get "login" => "sessions#new", :as => :login
+  get "login" => "sessions#new", as: :login
   post "login" => "sessions#create"
-  post "logout" => "sessions#destroy", :as => :logout
+  post "logout" => "sessions#destroy", as: :logout
 
   root to: "users#index"
 end

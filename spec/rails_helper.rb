@@ -6,6 +6,7 @@ require File.expand_path("../config/environment", __dir__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require "rspec/rails"
 require "database_cleaner"
+require "capybara/rspec"
 Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
@@ -20,6 +21,11 @@ end
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+
+  config.include Sorcery::TestHelpers::Rails::Controller, type: :controller
+  config.include AuthHelpers, type: :request
+  config.include ViewComponent::TestHelpers, type: :component
+  config.include Capybara::RSpecMatchers, type: :component
 end
 
 Shoulda::Matchers.configure do |config|

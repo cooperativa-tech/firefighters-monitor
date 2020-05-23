@@ -17,10 +17,12 @@ gem "webpacker", "~> 5.1.1"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
+  gem "capybara"
   gem "database_cleaner"
   gem "dotenv"
   gem "factory_bot_rails"
   gem "faker"
+  gem "rails-controller-testing"
   gem "rspec-rails", "~> 4.0.0"
   gem "rubocop"
   gem "rubocop-rails"

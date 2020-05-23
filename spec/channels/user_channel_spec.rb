@@ -20,8 +20,8 @@ RSpec.describe UserChannel, type: :channel do
     user = create(:user)
     subscribe(user_id: user.id)
 
-    expect {
+    expect do
       perform :toggle
-    }.to have_broadcasted_to(user)
+    end.to have_broadcasted_to(user)
   end
 end

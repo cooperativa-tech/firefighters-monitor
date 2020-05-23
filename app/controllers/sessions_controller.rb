@@ -2,6 +2,12 @@ class SessionsController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
 
   def new
+    if current_user
+      redirect_to(users_path)
+
+      return
+    end
+
     @user = User.new
   end
 
@@ -10,11 +16,11 @@ class SessionsController < ApplicationController
     logged_in = login(user_params[:email], user_params[:password])
 
     if logged_in
-      redirect_back_or_to(users_path, notice: "Login successful")
+      redirect_to(users_path, notice: "Login successful")
     else
       flash.now[:alert] = "Login failed"
 
-      render action: "new"
+      render action: "new", status: :unauthorized
     end
   end
 
