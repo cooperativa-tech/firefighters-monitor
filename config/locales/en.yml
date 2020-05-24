@@ -1,4 +1,5 @@
 en:
   users:
+    unavailable: Unavailable
     available: Available
     service: In Service

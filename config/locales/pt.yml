@@ -1,4 +1,5 @@
 pt:
   users:
+    unavailable: Indisponível
     available: Disponível
     service: Em Serviço

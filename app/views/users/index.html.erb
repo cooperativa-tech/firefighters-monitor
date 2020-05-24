@@ -1,14 +1,19 @@
 <div class="Users">
   <div class="Users-list" data-controller="users" data-users-current_user_id=<%= current_user.id %>>
     <% @users.each do |user| %>
-      <div>
+      <button
+        class="Users-user Users-user--<%= user.status %>"
+        data-user_id="<%= user.id %>"
+        data-reflex="click->UserReflex#toggle_status"
+      >
         <span><%= user.username %></span>
-        <span><%= user.status %></span>
-        <button
-          data-user_id="<%= user.id %>"
-          data-reflex="click->UserReflex#toggle_status"
-        >Toggle Status</button>
-      </div>
+
+        <div class="Users-userStatus">
+          <% unless user.unavailable? %>
+            <%= t(user.status) %>
+          <% end %>
+        </div>
+      </button>
     <% end %>
   </div>
 
