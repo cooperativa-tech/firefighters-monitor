@@ -4,13 +4,19 @@
       <button
         class="Users-user Users-user--<%= user.status %>"
         data-user_id="<%= user.id %>"
-        data-reflex="click->UserReflex#toggle_status"
+        data-action="click->users#toggleStatus contextmenu->users#toggleDutyType"
       >
         <span><%= user.username %></span>
 
+        <% if user.duty_type.present? %>
+          <div class="Users-userPicket">
+            <%= t("users.#{user.duty_type}") %>
+          </div>
+        <% end %>
+
         <div class="Users-userStatus">
           <% unless user.unavailable? %>
-            <%= t(user.status) %>
+            <%= t("users.#{user.status}") %>
           <% end %>
         </div>
       </button>
@@ -18,15 +24,33 @@
   </div>
 
   <div class="Users-statuses">
-    <h2><%= t("available") %></h2>
+    <h2><%= t("users.available") %></h2>
 
     <% @available_users.each do |user| %>
       <p><%= user.username %></p>
     <% end %>
 
-    <h2><%= t("service") %></h2>
+    <h2><%= t("users.service") %></h2>
 
     <% @service_users.each do |user| %>
+      <p><%= user.username %></p>
+    <% end %>
+
+    <h2><%= t("users.picket") %></h2>
+
+    <% @picket_users.each do |user| %>
+      <p><%= user.username %></p>
+    <% end %>
+
+    <h2><%= t("users.elac") %></h2>
+
+    <% @elac_users.each do |user| %>
+      <p><%= user.username %></p>
+    <% end %>
+
+    <h2><%= t("users.eip") %></h2>
+
+    <% @eip_users.each do |user| %>
       <p><%= user.username %></p>
     <% end %>
   </div>

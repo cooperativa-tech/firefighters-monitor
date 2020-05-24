@@ -32,28 +32,59 @@ RSpec.describe User, type: :model do
     it "changes the status from unavailable to available" do
       user = create(:user, status: "unavailable")
 
-      returned_status = user.toggle_status
+      user.toggle_status
 
       expect(user.status).to eq("available")
-      expect(returned_status).to eq("available")
     end
 
     it "changes the status from available to service" do
       user = create(:user, status: "available")
 
-      returned_status = user.toggle_status
+      user.toggle_status
 
       expect(user.status).to eq("service")
-      expect(returned_status).to eq("service")
     end
 
     it "changes the status from service to unavailable" do
       user = create(:user, status: "service")
 
-      returned_status = user.toggle_status
+      user.toggle_status
 
       expect(user.status).to eq("unavailable")
-      expect(returned_status).to eq("unavailable")
+    end
+  end
+
+  describe ".toggle_duty_type" do
+    it "changes the status from nil to picket" do
+      user = create(:user)
+
+      user.toggle_duty_type
+
+      expect(user.duty_type).to eq("picket")
+    end
+
+    it "changes the status from picket to elac" do
+      user = create(:user, duty_type: "picket")
+
+      user.toggle_duty_type
+
+      expect(user.duty_type).to eq("elac")
+    end
+
+    it "changes the status from elac to eip" do
+      user = create(:user, duty_type: "elac")
+
+      user.toggle_duty_type
+
+      expect(user.duty_type).to eq("eip")
+    end
+
+    it "changes the status from eip to nil" do
+      user = create(:user, duty_type: "eip")
+
+      user.toggle_duty_type
+
+      expect(user.duty_type).to eq(nil)
     end
   end
 end

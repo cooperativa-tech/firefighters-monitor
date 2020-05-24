@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_175819) do
+ActiveRecord::Schema.define(version: 2020_05_24_143916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_05_23_175819) do
     t.string "remember_me_token"
     t.datetime "remember_me_token_expires_at"
     t.string "status", default: "unavailable", null: false
+    t.string "duty_type"
     t.index ["remember_me_token"], name: "index_users_on_remember_me_token"
     t.index ["username"], name: "index_users_on_username", unique: true
   end

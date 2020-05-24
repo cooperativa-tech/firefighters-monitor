@@ -10,6 +10,7 @@
 }
 
 .Users-user {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,6 +25,21 @@
   background-color: lightgrey;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
+}
+
+.Users-userPicket {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  z-index: 1;
+  width: 80%;
+  height: auto;
+  background-color: #f1d302;
+  border-radius: 12px;
+  color: #161925;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
 }
 
 .Users-userStatus {

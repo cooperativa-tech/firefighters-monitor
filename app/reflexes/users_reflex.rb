@@ -1,9 +1,15 @@
-class UserReflex < ApplicationReflex
+class UsersReflex < ApplicationReflex
   include CableReady::Broadcaster
 
   def toggle_status
     user = User.find(element.dataset[:user_id])
     user.toggle_status
+    broadcast_to_others
+  end
+
+  def toggle_duty_type
+    user = User.find(element.dataset[:user_id])
+    user.toggle_duty_type
     broadcast_to_others
   end
 
