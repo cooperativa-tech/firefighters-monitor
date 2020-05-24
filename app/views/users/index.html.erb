@@ -1,9 +1,9 @@
 <div class="Users">
-  <div class="Users-list">
+  <div class="Users-list" data-controller="users" data-users-current_user_id=<%= current_user.id %>>
     <% @users.each do |user| %>
-      <div data-controller="user" data-user-id=<%= user.id %>>
+      <div>
         <span><%= user.username %></span>
-        <span data-target="user.status"><%= user.status %></span>
+        <span><%= user.status %></span>
         <button
           data-user_id="<%= user.id %>"
           data-reflex="click->UserReflex#toggle_status"

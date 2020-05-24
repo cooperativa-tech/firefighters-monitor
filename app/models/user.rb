@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include CableReady::Broadcaster
+
   authenticates_with_sorcery!
 
   enum role: { regular: "regular", admin: "admin" }

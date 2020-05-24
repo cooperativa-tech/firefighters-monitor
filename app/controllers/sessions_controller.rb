@@ -17,6 +17,8 @@ class SessionsController < ApplicationController
 
     if logged_in
       redirect_to(root_path, notice: "Login successful")
+
+      logged_in
     else
       flash.now[:alert] = "Login failed"
 

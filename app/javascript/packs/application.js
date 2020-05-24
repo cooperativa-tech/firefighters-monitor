@@ -17,5 +17,3 @@ require("channels");
 
 import "controllers";
 import "components";
-
-import "controllers"

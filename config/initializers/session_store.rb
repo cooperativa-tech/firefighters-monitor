@@ -1,1 +1,1 @@
-Rails.application.config.session_store :active_record_store, key: "_firefighters_monitor_session"
+Rails.application.config.session_store :active_record_store, key: "_firefighters_monitor_session", same_site: :lax

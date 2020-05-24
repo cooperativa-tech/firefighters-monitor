@@ -320,6 +320,7 @@ DEPENDENCIES
   administrate
   bootsnap (>= 1.4.2)
   byebug
+  cable_ready (~> 4.1)
   capybara
   database_cleaner
   dotenv
