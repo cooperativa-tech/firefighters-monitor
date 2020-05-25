@@ -1,5 +1,5 @@
-import Controller from "./application_controller";
 import StimusReflex from "stimulus_reflex";
+import Controller from "./application_controller";
 
 export default class extends Controller {
   connect() {
@@ -27,6 +27,6 @@ export default class extends Controller {
   };
 
   get currentUser() {
-    return parseInt(this.data.get("current_user_id"));
+    return parseInt(this.data.get("current_user_id"), 10);
   }
 }
