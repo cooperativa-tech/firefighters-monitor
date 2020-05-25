@@ -23,7 +23,8 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
 
   config.include Sorcery::TestHelpers::Rails::Controller, type: :controller
-  config.include AuthHelpers, type: :request
+  config.include AuthHelpers::Request, type: :request
+  config.include AuthHelpers::Feature, type: :feature
   config.include ViewComponent::TestHelpers, type: :component
   config.include Capybara::RSpecMatchers, type: :component
 end

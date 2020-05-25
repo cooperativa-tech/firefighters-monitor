@@ -56,7 +56,7 @@ RSpec.describe User, type: :model do
 
   describe ".toggle_duty_type" do
     it "changes the status from nil to picket" do
-      user = create(:user)
+      user = create(:user, duty_type: nil)
 
       user.toggle_duty_type
 

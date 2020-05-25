@@ -8,6 +8,10 @@ export default class extends Controller {
     window.addEventListener("users:update", this.handleUsersUpdate);
   }
 
+  disconnect() {
+    window.removeEventListener("users:update", this.handleUsersUpdate);
+  }
+
   handleUsersUpdate = (event) => {
     if (event.detail.triggeredBy === this.currentUser) return;
 

@@ -13,7 +13,9 @@
     <%= render(FlashMessageComponent.new(flash: flash)) %>
 
     <% if current_user %>
-      <%= button_to "Sign Out", logout_path %>
+      <%= button_to logout_path do %>
+        Logout
+      <% end %>
     <% end %>
 
     <%= yield %>
