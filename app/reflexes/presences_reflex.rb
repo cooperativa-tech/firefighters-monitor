@@ -1,4 +1,4 @@
-class UsersReflex < ApplicationReflex
+class PresencesReflex < ApplicationReflex
   include CableReady::Broadcaster
 
   def toggle_status
@@ -17,10 +17,10 @@ class UsersReflex < ApplicationReflex
 
   def broadcast_to_others
     event = {
-      name: "users:update",
+      name: "presences:update",
       detail: { triggered_by: current_user.id }
     }
-    cable_ready["users"].dispatch_event(event)
+    cable_ready["presences"].dispatch_event(event)
 
     cable_ready.broadcast
   end

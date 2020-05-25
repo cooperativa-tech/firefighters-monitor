@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Sessions", type: :request do
+RSpec.describe SessionsController, type: :request do
   describe "GET #new" do
     it "has a 200 status code" do
       get login_path

@@ -5,11 +5,11 @@ export default class extends Controller {
   connect() {
     StimusReflex.register(this);
 
-    window.addEventListener("users:update", this.handleUsersUpdate);
+    window.addEventListener("presences:update", this.handleUsersUpdate);
   }
 
   disconnect() {
-    window.removeEventListener("users:update", this.handleUsersUpdate);
+    window.removeEventListener("presences:update", this.handleUsersUpdate);
   }
 
   handleUsersUpdate = (event) => {
@@ -21,13 +21,13 @@ export default class extends Controller {
   toggleStatus = (event) => {
     event.preventDefault();
 
-    this.stimulate("UsersReflex#toggle_status", event.currentTarget);
+    this.stimulate("PresencesReflex#toggle_status", event.currentTarget);
   };
 
   toggleDutyType = (event) => {
     event.preventDefault();
 
-    this.stimulate("UsersReflex#toggle_duty_type", event.currentTarget);
+    this.stimulate("PresencesReflex#toggle_duty_type", event.currentTarget);
   };
 
   get currentUser() {

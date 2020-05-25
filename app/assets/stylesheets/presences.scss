@@ -1,15 +1,15 @@
-.Users {
+.Presences {
   display: flex;
   flex-direction: row;
 }
 
-.Users-list {
+.Presences-list {
   display: flex;
   flex-wrap: wrap;
   width: 77%;
 }
 
-.Users-user {
+.Presences-user {
   position: relative;
 
   display: flex;
@@ -30,7 +30,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.Users-userPicket {
+.Presences-userDutyType {
   position: absolute;
   top: 40%;
 
@@ -52,7 +52,7 @@
   line-height: 20px;
 }
 
-.Users-userStatus {
+.Presences-userStatus {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,18 +70,18 @@
   line-height: 20px;
 }
 
-.Users-user:hover {
+.Presences-user:hover {
   transform: translateY(-6px);
 }
 
-.Users-user--available {
+.Presences-user--available {
   background-color: green;
 }
 
-.Users-user--service {
+.Presences-user--service {
   background-color: darkred;
 }
 
-.Users-statuses {
+.Presences-statuses {
   width: 50%;
 }

@@ -1,1 +1,5 @@
-<p>meme</p>
+<p>Hello World!</p>
+
+<% if current_user.admin? %>
+  <%= link_to t("presences"), presences_path %>
+<% end %>

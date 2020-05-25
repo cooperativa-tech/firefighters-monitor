@@ -1,20 +1,20 @@
-<div class="Users">
-  <div class="Users-list" data-controller="users" data-users-current_user_id=<%= current_user.id %>>
+<div class="Presences">
+  <div class="Presences-list" data-controller="presences" data-presences-current_user_id=<%= current_user.id %>>
     <% @users.each do |user| %>
       <button
-        class="Users-user Users-user--<%= user.status %>"
+        class="Presences-user Presences-user--<%= user.status %>"
         data-user_id="<%= user.id %>"
-        data-action="click->users#toggleStatus contextmenu->users#toggleDutyType"
+        data-action="click->presences#toggleStatus contextmenu->presences#toggleDutyType"
       >
         <span><%= user.username %></span>
 
         <% if user.duty_type.present? %>
-          <div class="Users-userPicket">
+          <div class="Presences-userDutyType">
             <%= t("users.#{user.duty_type}") %>
           </div>
         <% end %>
 
-        <div class="Users-userStatus">
+        <div class="Presences-userStatus">
           <% unless user.unavailable? %>
             <%= t("users.#{user.status}") %>
           <% end %>
@@ -23,7 +23,7 @@
     <% end %>
   </div>
 
-  <div class="Users-statuses">
+  <div class="Presences-statuses">
     <h2><%= t("users.available") %></h2>
 
     <% @available_users.each do |user| %>
