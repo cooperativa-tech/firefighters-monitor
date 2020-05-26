@@ -42,6 +42,9 @@ bundle exec rake db:create || true
 bundle exec rake db:migrate
 bundle exec rake db:test:prepare
 
+pp_info "setup" "turning on caching (NEEDED FOR STIMULUS REFLEX)"
+rails dev:cache
+
 pp_info "setup" "checking chromedriver"
 if not_installed "chromedriver"; then
   pp_warn "warn" "chromedriver was not detected on this system. It is required to run feature specs, please install it."
