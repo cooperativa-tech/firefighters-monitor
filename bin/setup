@@ -50,4 +50,9 @@ if not_installed "chromedriver"; then
   pp_warn "warn" "chromedriver was not detected on this system. It is required to run feature specs, please install it."
 fi
 
+pp_info "setup" "checking redis"
+if not_installed "redis-cli"; then
+  pp_warn "warn" "redis is not installed. it's required for the async nature of the application, please install it"
+fi
+
 pp_info "setup" "You're good to go. Run bin/server to get the app running."
