@@ -7,11 +7,12 @@ gem "activerecord-session_store"
 gem "administrate"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "cable_ready", "~> 4.1"
+gem "hiredis"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 4.3"
 gem "pundit"
 gem "rails", "~> 6.0.3"
-gem "redis"
+gem "redis", ">= 4.0", require: ["redis", "redis/connection/hiredis"]
 gem "sass-rails", ">= 6"
 gem "sorcery"
 gem "stimulus_reflex", "~> 3.2"
