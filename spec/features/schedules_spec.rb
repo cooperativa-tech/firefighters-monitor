@@ -13,7 +13,7 @@ RSpec.feature "Authentication", js: true do
     login_user(user)
 
     visit new_schedule_path
-    fill_in("schedule[date]", with: schedule_params[:date])
+    fill_in_date("schedule[date]", with: schedule_params[:date])
     select(schedule_params[:status], from: "schedule[status]")
     click_on("commit")
 
@@ -39,5 +39,11 @@ RSpec.feature "Authentication", js: true do
     expect(user.status).to eq(schedule_params[:status])
     expect(current_path).to eq(new_schedule_path)
     Delayed::Worker.delay_jobs = true
+  end
+
+  private
+
+  def fill_in_date(name, with:)
+    page.execute_script("document.querySelector(\"input[name='#{name}']\").value = \"#{with}\"")
   end
 end
