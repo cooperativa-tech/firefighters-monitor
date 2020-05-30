@@ -45,9 +45,7 @@ jobs:
             path: ~/node_modules
             key: ${{ runner.os }}-build-node_modules-${{ hashFiles('**/yarn.lock') }}
             restore-keys: |
-              ${{ runner.os }}-build-node_modules-
-              ${{ runner.os }}-build-
-              ${{ runner.os }}-
+              ${{ runner.os }}-node-
 
       - name: Install javascript deps
         uses: borales/actions-yarn@v2.0.0
