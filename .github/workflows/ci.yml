@@ -8,6 +8,7 @@ on:
 
 jobs:
   test:
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -31,7 +32,7 @@ jobs:
       - name: Setup Chromedriver
         uses: nanasess/setup-chromedriver@master
 
-      - name: Cache Ruby deps
+      - name: Cache ruby deps
         uses: actions/cache@v2
         with:
           path: vendor/bundle
