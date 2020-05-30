@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.6.5"
+ruby "~> 2.6"
 
 gem "activerecord-session_store"
 gem "administrate"
@@ -47,9 +47,9 @@ group :test do
   gem "capybara-screenshot"
   gem "database_cleaner-active_record"
   gem "rails-controller-testing"
-  gem "transactional_capybara"
   gem "selenium-webdriver"
   gem "shoulda-matchers"
+  gem "transactional_capybara"
 end
 
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
