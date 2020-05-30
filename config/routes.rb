@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :presences, only: [:index]
+  resources :schedules, only: %i[new create]
 
   get "login" => "sessions#new", as: :login
   post "login" => "sessions#create"

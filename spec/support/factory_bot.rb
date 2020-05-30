@@ -1,5 +1,5 @@
 RSpec.configure do |config|
-  BLACKLISTED_FACTORIES = %i[].freeze
+  BLACKLISTED_FACTORIES = %i[schedule].freeze
 
   config.include FactoryBot::Syntax::Methods
 

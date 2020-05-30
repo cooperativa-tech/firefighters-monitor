@@ -3,3 +3,5 @@
 <% if current_user.admin? %>
   <%= link_to t("presences"), presences_path %>
 <% end %>
+
+<%= link_to t("schedules"), new_schedule_path %>

@@ -1,4 +1,9 @@
 en:
+  helpers:
+    label:
+      schedule:
+        date: Dates
+        status: Status
   users:
     unavailable: Unavailable
     available: Available
@@ -7,3 +12,4 @@ en:
     elac: ELAC
     eip: EIP
   presences: Presences
+  schedules: Schedules

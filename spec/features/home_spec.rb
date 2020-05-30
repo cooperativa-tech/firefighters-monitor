@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Home Page" do
+RSpec.feature "Home Page", js: true do
   it "render a hello world" do
     user = create(:user)
     login_user(user)

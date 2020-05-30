@@ -7,6 +7,8 @@ gem "activerecord-session_store"
 gem "administrate"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "cable_ready", "~> 4.1"
+gem "delayed_job"
+gem "delayed_job_active_record"
 gem "hiredis"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 4.3"
@@ -45,6 +47,7 @@ group :test do
   gem "capybara-screenshot"
   gem "database_cleaner-active_record"
   gem "rails-controller-testing"
+  gem "transactional_capybara"
   gem "selenium-webdriver"
   gem "shoulda-matchers"
 end

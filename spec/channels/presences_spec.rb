@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe PresencesChannel, type: :channel do
+RSpec.describe PresencesChannel do
   it "confirms the subscription" do
     user = create(:user, :admin)
     stub_connection current_user: user

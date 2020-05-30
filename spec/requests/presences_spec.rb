@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe PresencesController, type: :request do
+RSpec.describe PresencesController do
   describe "GET #index" do
     it "renders the users" do
       users = create_list(:user, 3, :admin)

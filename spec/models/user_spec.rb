@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe User, type: :model do
+RSpec.describe User do
   describe "attribute validations" do
     it { is_expected.to validate_presence_of(:username) }
     it { is_expected.to validate_presence_of(:password) }
@@ -28,63 +28,63 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe ".toggle_status" do
-    it "changes the status from unavailable to available" do
+  describe ".next_status" do
+    it "it returns available if the current status is unavailable" do
       user = create(:user, status: "unavailable")
 
-      user.toggle_status
+      new_status = user.next_status
 
-      expect(user.status).to eq("available")
+      expect(new_status).to eq("available")
     end
 
-    it "changes the status from available to service" do
+    it "it returns service if the current status is available" do
       user = create(:user, status: "available")
 
-      user.toggle_status
+      new_status = user.next_status
 
-      expect(user.status).to eq("service")
+      expect(new_status).to eq("service")
     end
 
-    it "changes the status from service to unavailable" do
+    it "it returns unavailable if the current status is service" do
       user = create(:user, status: "service")
 
-      user.toggle_status
+      new_status = user.next_status
 
-      expect(user.status).to eq("unavailable")
+      expect(new_status).to eq("unavailable")
     end
   end
 
-  describe ".toggle_duty_type" do
-    it "changes the status from nil to picket" do
+  describe ".next_duty_type" do
+    it "it returns picket if the current status is empty" do
       user = create(:user, duty_type: nil)
 
-      user.toggle_duty_type
+      new_duty_type = user.next_duty_type
 
-      expect(user.duty_type).to eq("picket")
+      expect(new_duty_type).to eq("picket")
     end
 
-    it "changes the status from picket to elac" do
+    it "it returns elac if the current status is picket" do
       user = create(:user, duty_type: "picket")
 
-      user.toggle_duty_type
+      new_duty_type = user.next_duty_type
 
-      expect(user.duty_type).to eq("elac")
+      expect(new_duty_type).to eq("elac")
     end
 
-    it "changes the status from elac to eip" do
+    it "it returns eip if the current status is elac" do
       user = create(:user, duty_type: "elac")
 
-      user.toggle_duty_type
+      new_duty_type = user.next_duty_type
 
-      expect(user.duty_type).to eq("eip")
+      expect(new_duty_type).to eq("eip")
     end
 
-    it "changes the status from eip to nil" do
+    it "it returns nothing if the current status is eip" do
       user = create(:user, duty_type: "eip")
 
-      user.toggle_duty_type
+      new_duty_type = user.next_duty_type
 
-      expect(user.duty_type).to eq(nil)
+      expect(new_duty_type).to eq(nil)
     end
   end
 end
