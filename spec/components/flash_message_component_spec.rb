@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe FlashMessageComponent, type: :component do
+RSpec.describe FlashMessageComponent do
   it "doesn't render anything if no flash is present" do
     component = FlashMessageComponent.new(flash: nil)
 

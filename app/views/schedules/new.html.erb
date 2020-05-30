@@ -1,0 +1,15 @@
+<%= form_with model: @schedule, method: :post do |f| %>
+  <div>
+    <%= f.label :date %>
+    <%= f.datetime_field :date, class: "DatePicker-datetime" %>
+  </div>
+
+  <div>
+    <%= f.label :status %>
+    <%= f.select :status, @statuses %>
+  </div>
+
+  <div>
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

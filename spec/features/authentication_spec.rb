@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Authentication" do
+RSpec.feature "Authentication", js: true do
   it "redirects user to login if not logged in" do
     visit root_path
 

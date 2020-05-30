@@ -2,17 +2,17 @@
   <h2>Login</h2>
 
   <%= form_with model: @user, url: login_path, method: :post do |f| %>
-    <div class="field">
-      <%= f.label :username %><br />
+    <div>
+      <%= f.label :username %>
       <%= f.text_field :username %>
     </div>
 
-    <div class="field">
-      <%= f.label :password %><br />
+    <div>
+      <%= f.label :password %>
       <%= f.password_field :password %>
     </div>
 
-    <div class="actions">
+    <div>
       <%= f.submit "Login" %>
     </div>
   <% end %>

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe HomeController, type: :request do
+RSpec.describe HomeController do
   describe "GET #index" do
     it "renders the home page" do
       user = create(:user, :admin)

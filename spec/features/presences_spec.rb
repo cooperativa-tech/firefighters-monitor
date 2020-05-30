@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Presences" do
+RSpec.feature "Presences", js: true do
   it "should toggle the status of a user" do
     create_list(:user, 3)
     user = create(:user, :admin, status: "unavailable")

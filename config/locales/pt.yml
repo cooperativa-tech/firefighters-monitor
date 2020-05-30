@@ -1,4 +1,9 @@
 pt:
+  helpers:
+    label:
+      schedule:
+        date: Data
+        status: Estado
   users:
     unavailable: Indisponível
     available: Disponível
@@ -7,3 +12,4 @@ pt:
     elac: ELAC
     eip: EIP
   presences: Presenças
+  schedules: Schedules
