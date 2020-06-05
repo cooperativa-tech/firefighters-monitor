@@ -1,7 +1,14 @@
 <%= form_with model: @schedule, method: :post do |f| %>
   <div>
-    <%= f.label :date %>
-    <%= f.datetime_field :date, class: "DatePicker-datetime" %>
+    <%= f.label :start_date %>
+    <%= f.text_field :start_date, class: "DatePicker-datetime" %>
+    <%= render(FieldErrorsComponent.new(@schedule, :start_date)) %>
+  </div>
+
+  <div>
+    <%= f.label :end_date %>
+    <%= f.text_field :end_date, class: "DatePicker-datetime" %>
+    <%= render(FieldErrorsComponent.new(@schedule, :end_date)) %>
   </div>
 
   <div>

@@ -19,20 +19,6 @@ RSpec.describe SchedulesController do
   end
 
   describe "POST #create" do
-    it "changes the user's status" do
-      Delayed::Worker.delay_jobs = false
-      user = create(:user)
-      schedule_params = attributes_for(:schedule)
-      login_user(user)
-
-      post schedules_path, params: { schedule: schedule_params }
-
-      user.reload
-      expect(response).to redirect_to(new_schedule_path)
-      expect(user.status).to eq(schedule_params[:status])
-      Delayed::Worker.delay_jobs = true
-    end
-
     it "created a delayed job after creating a schedule" do
       user = create(:user)
       schedule_params = attributes_for(:schedule)
@@ -40,9 +26,11 @@ RSpec.describe SchedulesController do
 
       post schedules_path, params: { schedule: schedule_params }
 
-      delayed_job = Delayed::Job.last
+      first_delayed_job = Delayed::Job.first
+      last_delayed_job = Delayed::Job.last
       expect(response).to redirect_to(new_schedule_path)
-      expect(delayed_job.run_at).to eq(schedule_params[:date])
+      expect(first_delayed_job.run_at).to be_within(1.minute).of(schedule_params[:start_date])
+      expect(last_delayed_job.run_at).to be_within(1.minute).of(schedule_params[:end_date])
     end
 
     it "redirects to login path if user not logged in" do

@@ -13,32 +13,17 @@ RSpec.feature "Authentication", js: true do
     login_user(user)
 
     visit new_schedule_path
-    fill_in_date("schedule[date]", with: schedule_params[:date])
+    fill_in_date("schedule[start_date]", with: schedule_params[:start_date])
+    fill_in_date("schedule[end_date]", with: schedule_params[:end_date])
     select(schedule_params[:status], from: "schedule[status]")
     click_on("commit")
 
     expect(page).to have_content("Scheduled!")
-    delayed_job = Delayed::Job.last
-    expect(delayed_job.run_at).to be_within(1.minute).of(schedule_params[:date])
+    first_delayed_job = Delayed::Job.first
+    last_delayed_job = Delayed::Job.last
+    expect(first_delayed_job.run_at).to be_within(1.minute).of(schedule_params[:start_date])
+    expect(last_delayed_job.run_at).to be_within(1.minute).of(schedule_params[:end_date])
     expect(current_path).to eq(new_schedule_path)
-  end
-
-  it "changes the status of a user" do
-    Delayed::Worker.delay_jobs = false
-    user = create(:user)
-    schedule_params = attributes_for(:schedule)
-    login_user(user)
-
-    visit new_schedule_path
-    fill_in("schedule[date]", with: schedule_params[:date])
-    select(schedule_params[:status], from: "schedule[status]")
-    click_on("commit")
-
-    expect(page).to have_content("Scheduled!")
-    user.reload
-    expect(user.status).to eq(schedule_params[:status])
-    expect(current_path).to eq(new_schedule_path)
-    Delayed::Worker.delay_jobs = true
   end
 
   private

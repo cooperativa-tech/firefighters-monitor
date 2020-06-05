@@ -22,11 +22,12 @@ class SchedulesController < ApplicationController
   private
 
   def schedule_params
-    params.require(:schedule).permit(:date, :status)
+    params.require(:schedule).permit(:start_date, :end_date, :status)
   end
 
   def schedule_status_change(schedule)
     user_updater = UserUpdater.new(user: current_user)
-    user_updater.delay(run_at: schedule.date).toggle_status(schedule.status)
+    user_updater.delay(run_at: schedule.start_date.utc).toggle_status(schedule.status)
+    user_updater.delay(run_at: schedule.end_date.utc).toggle_status(:unavailable)
   end
 end

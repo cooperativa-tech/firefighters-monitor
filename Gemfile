@@ -20,6 +20,7 @@ gem "sorcery"
 gem "stimulus_reflex", "~> 3.2"
 gem "turbolinks", "~> 5"
 gem "turbolinks_render"
+gem "validates_timeliness"
 gem "view_component"
 gem "webpacker", "~> 5.1.1"
 

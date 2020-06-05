@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :schedule do
-    date { Faker::Time.forward(days: 15).utc }
+    start_date { Time.now.utc }
+    end_date { Faker::Time.forward(days: 15).utc }
     status { User.statuses.keys.sample }
   end
 end
