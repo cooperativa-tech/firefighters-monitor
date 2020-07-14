@@ -6,8 +6,10 @@ class EnumField < Administrate::Field::Base
   end
 
   def select_field_values(form_builder)
-    form_builder.object.class.public_send(attribute.to_s.pluralize).keys.map do |v|
-      [v.titleize, v]
+    klass = form_builder.object.class
+
+    klass.public_send(attribute.to_s.pluralize).keys.map do |v|
+      [klass.human_enum_name(attribute, v), v]
     end
   end
 end

@@ -1,15 +1,16 @@
 en:
+  activerecord:
+    attributes:
+      user:
+        statuses:
+          service: In Service
+        duty_types:
+          elac: ELAC
+          eip: EIP
   helpers:
     label:
       schedule:
         date: Dates
         status: Status
-  users:
-    unavailable: Unavailable
-    available: Available
-    service: In Service
-    picket: Picket
-    elac: ELAC
-    eip: EIP
   presences: Presences
   schedules: Schedules

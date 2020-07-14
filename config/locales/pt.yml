@@ -5,6 +5,19 @@ pt:
   activerecord:
     models:
       user: Utilizador
+    attributes:
+      user:
+        roles:
+          regular: Normal
+          admin: Administrador
+        statuses:
+          unavailable: Indisponível
+          available: Disponível
+          service: Em Serviço
+        duty_types:
+          picket: Piquete
+          elac: ELAC
+          eip: EIP
   date:
     formats:
     default: "%d/%m/%Y %H:%M:%S"
@@ -22,12 +35,5 @@ pt:
       schedule:
         date: Data
         status: Estado
-  users:
-    unavailable: Indisponível
-    available: Disponível
-    service: Em Serviço
-    picket: Piquete
-    elac: ELAC
-    eip: EIP
   presences: Presenças
   schedules: Schedules

@@ -10,13 +10,13 @@
 
         <% if user.duty_type.present? %>
           <div class="Presences-userDutyType">
-            <%= t("users.#{user.duty_type}") %>
+            <%= User.human_enum_name(:duty_type, user.duty_type) %>
           </div>
         <% end %>
 
         <div class="Presences-userStatus">
           <% unless user.unavailable? %>
-            <%= t("users.#{user.status}") %>
+            <%= User.human_enum_name(:status, user.status) %>
           <% end %>
         </div>
       </button>
@@ -24,31 +24,31 @@
   </div>
 
   <div class="Presences-statuses">
-    <h2><%= t("users.available") %></h2>
+    <h2><%= User.human_enum_name(:status, :available) %></h2>
 
     <% @available_users.each do |user| %>
       <p><%= user.username %></p>
     <% end %>
 
-    <h2><%= t("users.service") %></h2>
+    <h2><%= User.human_enum_name(:status, :service) %></h2>
 
     <% @service_users.each do |user| %>
       <p><%= user.username %></p>
     <% end %>
 
-    <h2><%= t("users.picket") %></h2>
+    <h2><%= User.human_enum_name(:duty_type, :picket) %></h2>
 
     <% @picket_users.each do |user| %>
       <p><%= user.username %></p>
     <% end %>
 
-    <h2><%= t("users.elac") %></h2>
+    <h2><%= User.human_enum_name(:duty_type, :elac) %></h2>
 
     <% @elac_users.each do |user| %>
       <p><%= user.username %></p>
     <% end %>
 
-    <h2><%= t("users.eip") %></h2>
+    <h2><%= User.human_enum_name(:duty_type, :eip) %></h2>
 
     <% @eip_users.each do |user| %>
       <p><%= user.username %></p>

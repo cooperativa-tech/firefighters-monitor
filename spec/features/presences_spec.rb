@@ -9,7 +9,7 @@ RSpec.feature "Presences", js: true do
     visit presences_path
     click_on(user.username)
 
-    expect(page).to have_selector(".Presences-user", text: I18n.t("users.available"))
+    expect(page).to have_selector(".Presences-user", text: User.human_enum_name(:status, :available))
     user.reload
     expect(user).to be_available
   end
@@ -22,7 +22,7 @@ RSpec.feature "Presences", js: true do
     visit presences_path
     find_button(user.username).right_click
 
-    expect(page).to have_selector(".Presences-user", text: I18n.t("users.picket"))
+    expect(page).to have_selector(".Presences-user", text: User.human_enum_name(:duty_type, :picket))
     user.reload
     expect(user).to be_picket
   end
@@ -44,11 +44,11 @@ RSpec.feature "Presences", js: true do
 
     within_first_window do
       click_on(first_user.username)
-      expect(page).to have_selector(".Presences-user", text: I18n.t("users.available"))
+      expect(page).to have_selector(".Presences-user", text: User.human_enum_name(:status, :available))
     end
 
     within_second_window do
-      expect(page).to have_selector(".Presences-user", text: I18n.t("users.available"))
+      expect(page).to have_selector(".Presences-user", text: User.human_enum_name(:status, :available))
     end
   end
 
@@ -69,11 +69,11 @@ RSpec.feature "Presences", js: true do
 
     within_first_window do
       find_button(first_user.username).right_click
-      expect(page).to have_selector(".Presences-userDutyType", text: I18n.t("users.picket"))
+      expect(page).to have_selector(".Presences-userDutyType", text: User.human_enum_name(:duty_type, :picket))
     end
 
     within_second_window do
-      expect(page).to have_selector(".Presences-userDutyType", text: I18n.t("users.picket"))
+      expect(page).to have_selector(".Presences-userDutyType", text: User.human_enum_name(:duty_type, :picket))
     end
   end
 
