@@ -1,0 +1,38 @@
+.Home-Menu {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.Link {
+  width: 40vw;
+  padding-left: 2vw;
+  margin-bottom: 0.5rem;
+
+  background-color: var(--color-grey);
+
+  border-radius: 2rem;
+
+  color: black;
+
+  text-decoration: none;
+
+  transition: all 0.1s linear;
+}
+
+.Link:hover {
+  background-color: var(--color-leaf-green);
+}
+
+.Home-Header {
+  display: flex;
+  align-content: center;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.Home-Wrapper {
+  padding-top: 20vh;
+  margin: 0 auto;
+}
