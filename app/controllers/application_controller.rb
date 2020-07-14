@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include Pundit
+  include HttpAcceptLanguage::AutoLocale
 
   before_action :require_login
   rescue_from Pundit::NotAuthorizedError, with: :not_authorized

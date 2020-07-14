@@ -1,6 +1,24 @@
 pt:
+  administrate:
+    navigation:
+      back_to_app: Voltar à app
+  activerecord:
+    models:
+      user: Utilizador
+  date:
+    formats:
+    default: "%d/%m/%Y %H:%M:%S"
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M:%S"
   helpers:
     label:
+      user:
+        username: Nome de Utilizador
+        role: Função
+        password_confirmation: Confirme a Password
+        created_at: Data de Criação
+        updated_at: Última atualização
       schedule:
         date: Data
         status: Estado
