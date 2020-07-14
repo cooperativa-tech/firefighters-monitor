@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include HttpAcceptLanguage::AutoLocale
   include Pundit
 
   before_action :require_login
