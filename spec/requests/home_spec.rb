@@ -8,7 +8,7 @@ RSpec.describe HomeController do
 
       get root_path
 
-      expect(response.body).to include("Hello World!")
+      expect(response.body).to include("Welcome")
     end
   end
 end
