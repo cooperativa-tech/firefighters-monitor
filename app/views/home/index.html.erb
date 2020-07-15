@@ -3,7 +3,7 @@
     <h1><%= t('welcome') %> <%= current_user.username %></h1>
     <div class='Home-Logout'>
       <% if current_user %>
-        <%= button_to logout_path, {class: 'Button'} do %>
+        <%= button_to logout_path, { class: 'Button' } do %>
           Logout
         <% end %>
       <% end %>
