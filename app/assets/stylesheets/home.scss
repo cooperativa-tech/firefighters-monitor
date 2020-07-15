@@ -1,10 +1,10 @@
-.Home-Menu {
+.Home-menu {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
 }
 
-.Link {
+.Home-link {
   width: 40vw;
   padding-left: 2vw;
   margin-bottom: 0.5rem;
@@ -20,11 +20,11 @@
   transition: all 0.1s linear;
 }
 
-.Link:hover {
+.Home-link:hover {
   background-color: var(--color-leaf-green);
 }
 
-.Home-Header {
+.Home-header {
   display: flex;
   align-content: center;
   align-items: center;
@@ -32,7 +32,7 @@
   justify-content: space-between;
 }
 
-.Home-Wrapper {
+.Home-wrapper {
   padding-top: 20vh;
   margin: 0 auto;
 }
