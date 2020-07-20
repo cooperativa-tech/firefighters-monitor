@@ -14,3 +14,5 @@ en:
         status: Status
   presences: Presences
   schedules: Schedules
+  admin: Admin
+  welcome: Welcome

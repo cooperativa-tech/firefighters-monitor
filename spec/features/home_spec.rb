@@ -1,13 +1,14 @@
 require "rails_helper"
 
 RSpec.feature "Home Page", js: true do
-  it "render a hello world" do
+  it "render a Welcome" do
     user = create(:user)
     login_user(user)
 
     visit root_path
 
-    expect(page).to have_content("Hello World")
+    expect(page).to have_content("Welcome")
+    expect(page).to have_content(user.username)
     expect(page).to_not have_content(I18n.t("presences"))
   end
 
@@ -17,7 +18,8 @@ RSpec.feature "Home Page", js: true do
 
     visit root_path
 
-    expect(page).to have_content("Hello World")
+    expect(page).to have_content("Welcome")
+    expect(page).to have_content(user.username)
     expect(page).to have_link(I18n.t("presences"))
   end
 

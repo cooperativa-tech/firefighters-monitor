@@ -1,7 +1,18 @@
-<p>Hello World!</p>
-
-<% if current_user.admin? %>
-  <%= link_to t("presences"), presences_path %>
-<% end %>
-
-<%= link_to t("schedules"), new_schedule_path %>
+<div class="Home-wrapper">
+  <div class="Home-header">
+    <h1><%= t("welcome") %> <%= current_user.username %></h1>
+    <div class="Home-Logout">
+      <% if current_user %>
+        <%= button_to logout_path, { class: "Button" } do %>
+          Logout
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <% if current_user.admin? %>
+  <div class="Home-menu">
+      <%= link_to t("presences"), presences_path, { class:"Home-link" } %>
+      <%= link_to t("admin"), admin_users_path, { class: "Home-link", 'data-turbolinks': false } %>
+  <% end %>
+  <%= link_to t("schedules"), new_schedule_path, { class: "Home-link" } %>
+</div>

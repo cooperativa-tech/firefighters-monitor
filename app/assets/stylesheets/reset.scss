@@ -1,3 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Space+Mono:400,700,italic|Karla:400,700,italic");
+
+:root {
+  --color-yellow: #f1d302;
+  --color-roasted-yellow: #f1a302;
+  --color-fire-red: #f03434;
+  --color-grey: #e3e3e3;
+  --color-light-grey: #ffffff;
+  --color-leaf-green: #00a878;
+  --color-black: #161925;
+  --color-blue: #7eb2dd;
+  --color-purple: #7586fe;
+
+  --font-family-mono: "Space Mono", monospace;
+  --font-family-sans-serif: "Karla", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+}
+
 *,
 *::after,
 *::before {
@@ -6,4 +25,23 @@
 
 .field_with_errors {
   display: inline;
+}
+
+body {
+  height: 100%;
+
+  font-family: var(--font-family-mono);
+  font-size: 2rem;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: auto;
+  font-weight: var(--font-weight-bold);
+  line-height: 3rem;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+}
+
+button {
+  font-family: var(--font-family-mono);
+  font-size: 1rem;
 }

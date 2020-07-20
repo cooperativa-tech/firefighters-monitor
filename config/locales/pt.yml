@@ -36,4 +36,6 @@ pt:
         date: Data
         status: Estado
   presences: Presenças
-  schedules: Schedules
+  schedules: Disponibilidades
+  admin: Configuração
+  welcome: Bem vindo

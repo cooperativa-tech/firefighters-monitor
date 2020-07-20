@@ -8,17 +8,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
-  <body>
+  <body class="Application">
     <%= render(FlashMessageComponent.new(flash: flash)) %>
-
-    <% if current_user %>
-      <%= button_to logout_path do %>
-        Logout
-      <% end %>
-    <% end %>
-
     <%= yield %>
   </body>
 </html>

@@ -1,6 +1,8 @@
 .Presences {
   display: flex;
   flex-direction: row;
+
+  font-family: "Space Mono", monospace;
 }
 
 .Presences-list {
@@ -19,9 +21,11 @@
   padding: 4px;
   margin: 10px;
 
-  background-color: lightgrey;
+  background-color: #e3e3e3;
   border-radius: 4px;
   cursor: pointer;
+
+  font-family: "Space Mono", monospace;
 
   font-size: 28px;
   line-height: 40px;
@@ -75,11 +79,11 @@
 }
 
 .Presences-user--available {
-  background-color: green;
+  background-color: #00a878;
 }
 
 .Presences-user--service {
-  background-color: darkred;
+  background-color: #f03434;
 }
 
 .Presences-statuses {
