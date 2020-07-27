@@ -6,7 +6,7 @@
         data-user_id="<%= user.id %>"
         data-action="click->presences#toggleStatus contextmenu->presences#toggleDutyType"
       >
-        <span class="Presences-user--block"><%= user.username %></span>
+        <span class="Presences-user--block Presences-userName"><%= user.username %></span>
 
         <% if user.duty_type.present? %>
           <div class="Presences-userDutyType Presences-userDutyType--<%= user.duty_type %>">
