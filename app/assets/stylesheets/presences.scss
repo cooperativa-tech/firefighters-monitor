@@ -14,24 +14,52 @@
 .Presences-user {
   position: relative;
 
-  display: flex;
-  flex-direction: column;
   width: 120px;
-  height: 100px;
+  height: 102px;
   padding: 4px;
   margin: 10px;
 
-  background-color: #e3e3e3;
+  background-color: var(--color-grey);
+  border: 1px solid var(--color-grey);
   border-radius: 4px;
-  cursor: pointer;
 
-  font-family: "Space Mono", monospace;
+  cursor: pointer;
+  outline: none;
+
+  font-family: var(--font-family-sans-serif);
 
   font-size: 28px;
-  line-height: 40px;
+  font-weight: var(--font-weight-bold);
+  line-height: 46px;
+  text-decoration: none;
   word-wrap: break-word;
 
   transition: transform 0.3s ease-in-out;
+  user-select: none;
+}
+
+.Presences-user--block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 50%;
+}
+
+.Presences-user:hover {
+  transform: translateY(-6px);
+}
+
+.Presences-user--available {
+  background-color: var(--color-leaf-green);
+  border-color: var(--color-leaf-green);
+}
+
+.Presences-user--service {
+  background-color: var(--color-fire-red);
+  border-color: var(--color-fire-red);
 }
 
 .Presences-userDutyType {
@@ -46,46 +74,79 @@
 
   height: auto;
 
-  background-color: #f1d302;
+  background-color: var(--color-yellow);
   border-radius: 12px;
-  color: #161925;
+  color: var(--color-black);
 
   font-size: 16px;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
 
   line-height: 20px;
+}
+
+.Presences-userDutyType--elac {
+  background-color: var(--color-roasted-yellow);
+}
+
+.Presences-userDutyType--eip {
+  background-color: var(--color-purple);
 }
 
 .Presences-userStatus {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-
-  height: 100%;
-
-  background-color: black;
+  background-color: var(--color-black);
+  border-radius: 4px;
   color: white;
 
+  font-family: var(--font-family-mono);
+
   font-size: 16px;
+  font-weight: var(--font-weight-regular);
 
   line-height: 20px;
 }
 
-.Presences-user:hover {
-  transform: translateY(-6px);
-}
-
-.Presences-user--available {
-  background-color: #00a878;
-}
-
-.Presences-user--service {
-  background-color: #f03434;
-}
-
 .Presences-statuses {
-  width: 50%;
+  width: 30%;
+  padding: 1rem;
+
+  font-size: 28px;
+  line-height: 40px;
+
+  h3 {
+    margin: 0 0 1rem;
+  }
+
+  > * {
+    margin-bottom: 2rem;
+  }
+}
+
+.Presences-statuses--available {
+  h3 {
+    border-bottom: 4px solid var(--color-leaf-green);
+  }
+}
+
+.Presences-statuses--service {
+  h3 {
+    border-bottom: 4px solid var(--color-fire-red);
+  }
+}
+
+.Presences-statuses--picket {
+  h3 {
+    border-bottom: 4px solid var(--color-yellow);
+  }
+}
+
+.Presences-statuses--elac {
+  h3 {
+    border-bottom: 4px solid var(--color-roasted-yellow);
+  }
+}
+
+.Presences-statuses--eip {
+  h3 {
+    border-bottom: 4px solid var(--color-purple);
+  }
 }
