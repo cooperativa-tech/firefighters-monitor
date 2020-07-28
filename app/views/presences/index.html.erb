@@ -6,15 +6,15 @@
         data-user_id="<%= user.id %>"
         data-action="click->presences#toggleStatus contextmenu->presences#toggleDutyType"
       >
-        <span><%= user.username %></span>
+        <span class="Presences-user--block Presences-userName"><%= user.username %></span>
 
         <% if user.duty_type.present? %>
-          <div class="Presences-userDutyType">
+          <div class="Presences-userDutyType Presences-userDutyType--<%= user.duty_type %>">
             <%= User.human_enum_name(:duty_type, user.duty_type) %>
           </div>
         <% end %>
 
-        <div class="Presences-userStatus">
+        <div class="Presences-user--block Presences-userStatus">
           <% unless user.unavailable? %>
             <%= User.human_enum_name(:status, user.status) %>
           <% end %>
@@ -24,34 +24,43 @@
   </div>
 
   <div class="Presences-statuses">
-    <h2><%= User.human_enum_name(:status, :available) %></h2>
+    <div class="Presences-statuses--available">
+      <h3><%= User.human_enum_name(:status, :available) %></h3>
+      <% @available_users.each do |user| %>
+        <span><%= user.username %></span>
+      <% end %>
+    </div>
 
-    <% @available_users.each do |user| %>
-      <p><%= user.username %></p>
+    <div class="Presences-statuses--service">
+      <h3><%= User.human_enum_name(:status, :service) %></h3>
+      <% @service_users.each do |user| %>
+        <span><%= user.username %></span>
+      <% end %>
+    </div>
+
+    <div class="Presences-statuses--picket">
+      <h3><%= User.human_enum_name(:duty_type, :picket) %></h3>
+      <% @picket_users.each do |user| %>
+        <span><%= user.username %></span>
+      <% end %>
+    </div>
+
+    <% @elac_users.any? do %>
+      <div class="Presences-statuses--elac">
+        <h3><%= User.human_enum_name(:duty_type, :elac) %></h3>
+        <% @elac_users.each do |user| %>
+          <span><%= user.username %></span>
+        <% end %>
+      </div>
     <% end %>
 
-    <h2><%= User.human_enum_name(:status, :service) %></h2>
-
-    <% @service_users.each do |user| %>
-      <p><%= user.username %></p>
-    <% end %>
-
-    <h2><%= User.human_enum_name(:duty_type, :picket) %></h2>
-
-    <% @picket_users.each do |user| %>
-      <p><%= user.username %></p>
-    <% end %>
-
-    <h2><%= User.human_enum_name(:duty_type, :elac) %></h2>
-
-    <% @elac_users.each do |user| %>
-      <p><%= user.username %></p>
-    <% end %>
-
-    <h2><%= User.human_enum_name(:duty_type, :eip) %></h2>
-
-    <% @eip_users.each do |user| %>
-      <p><%= user.username %></p>
+    <% @eip_users.any? do %>
+      <div class="Presences-statuses--eip">
+        <h3><%= User.human_enum_name(:duty_type, :eip) %></h3>
+        <% @eip_users.each do |user| %>
+          <span><%= user.username %></span>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
