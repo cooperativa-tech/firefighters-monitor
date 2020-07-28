@@ -6,12 +6,13 @@
     <%= csp_meta_tag %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' unless Webpacker.config.dev_server[:hmr] %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' if Webpacker.config.extract_css? %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body class="Application">
     <%= render(FlashMessageComponent.new(flash: flash)) %>
+
     <%= yield %>
   </body>
 </html>
