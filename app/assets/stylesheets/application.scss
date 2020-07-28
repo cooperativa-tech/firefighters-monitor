@@ -13,17 +13,9 @@
  * require_* statement. It is generally better to create a new file per
  * style scope.
  *
+ *  DISCLAIMER: This project uses Webpacker to manage both JS and CSS
+ *  please add new styles under frontend/stylesheets
+ *
  *= require_tree .
  *= require_self
  */
-
-@import "../../components/**/*";
-
-.Application {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-  padding: 0.5rem;
-  margin: 0;
-}

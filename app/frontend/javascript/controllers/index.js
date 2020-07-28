@@ -8,9 +8,9 @@ import consumer from "../channels/consumer";
 import controller from "./application_controller";
 
 const application = Application.start();
-const context = require.context("controllers", true, /_controller\.js$/);
+const context = require.context("./", true, /_controller\.js$/);
 const componentsContext = require.context(
-  "../../components",
+  "../../../components",
   true,
   /_controller\.js$/
 );
