@@ -39,6 +39,9 @@ Layout/EmptyLinesAroundAttributeAccessor:
 Layout/SpaceAroundMethodCallOperator:
   Enabled: true
 
+Metrics/MethodLength:
+  Max: 15
+
 Naming/PredicateName:
   ForbiddenPrefixes:
     - is_
