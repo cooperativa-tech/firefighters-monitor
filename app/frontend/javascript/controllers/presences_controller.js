@@ -1,9 +1,8 @@
-import StimusReflex from "stimulus_reflex";
 import Controller from "./application_controller";
 
 export default class extends Controller {
   connect() {
-    StimusReflex.register(this);
+    super.connect();
 
     window.addEventListener("presences:update", this.handleUsersUpdate);
   }
@@ -18,16 +17,23 @@ export default class extends Controller {
     this.stimulate();
   };
 
-  toggleStatus = (event) => {
+  toggleStatus = async (event) => {
     event.preventDefault();
 
-    this.stimulate("PresencesReflex#toggle_status", event.currentTarget);
+    this.showLoadingSpinner();
+    await this.stimulate("PresencesReflex#toggle_status", event.currentTarget);
+    this.removeLoadingSpinner();
   };
 
-  toggleDutyType = (event) => {
+  toggleDutyType = async (event) => {
     event.preventDefault();
 
-    this.stimulate("PresencesReflex#toggle_duty_type", event.currentTarget);
+    this.showLoadingSpinner();
+    await this.stimulate(
+      "PresencesReflex#toggle_duty_type",
+      event.currentTarget
+    );
+    this.removeLoadingSpinner();
   };
 
   get currentUser() {
