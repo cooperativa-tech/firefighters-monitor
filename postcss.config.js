@@ -1,7 +1,7 @@
 module.exports = {
   plugins: [
     require("postcss-easy-import"),
-    require("postcss-nested"),
+    require("postcss-nested").default,
     require("postcss-flexbugs-fixes"),
     require("postcss-preset-env")({
       autoprefixer: {

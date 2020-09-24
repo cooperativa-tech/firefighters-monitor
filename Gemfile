@@ -23,7 +23,7 @@ gem "turbolinks", "~> 5"
 gem "turbolinks_render"
 gem "validates_timeliness"
 gem "view_component"
-gem "webpacker", "~> 5.1.1"
+gem "webpacker", "~> 5.2.1"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
