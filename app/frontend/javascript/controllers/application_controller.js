@@ -5,4 +5,12 @@ export default class extends Controller {
   connect() {
     StimulusReflex.register(this);
   }
+
+  showLoadingSpinner() {
+    document.body.classList.add("wait");
+  }
+
+  removeLoadingSpinner() {
+    document.body.classList.remove("wait");
+  }
 }

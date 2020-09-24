@@ -1,6 +1,11 @@
 @import "../../components/**/*.css";
 @import "../stylesheets/**/*.css";
 
+body.wait,
+body.wait * {
+  cursor: wait !important;
+}
+
 .Application {
   display: flex;
   flex-direction: column;
