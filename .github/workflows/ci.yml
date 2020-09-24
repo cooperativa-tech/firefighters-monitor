@@ -29,6 +29,11 @@ jobs:
         with:
           ruby-version: 2.7.1
 
+      - name: Setup node
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+
       - name: Setup Chromedriver
         uses: nanasess/setup-chromedriver@master
 
@@ -48,10 +53,8 @@ jobs:
             restore-keys: |
               ${{ runner.os }}-node-
 
-      - name: Install javascript deps
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: install
+      - name: Install node deps
+        run: yarn
 
       - name: Install ruby deps
         run: |
