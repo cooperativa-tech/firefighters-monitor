@@ -15,7 +15,7 @@
     "flatpickr": "^4.6.6",
     "postcss-custom-properties": "^10.0.0",
     "postcss-easy-import": "^3.0.0",
-    "postcss-nested": "^5.0.0",
+    "postcss-nested": "^4.2.3",
     "stimulus": "^1.1.1",
     "stimulus_reflex": "3.3.0",
     "turbolinks": "^5.2.0"
