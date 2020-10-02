@@ -24,6 +24,17 @@
   background-color: var(--color-leaf-green);
 }
 
+.Home-link--disabled {
+  background-color: var(--color-light-grey);
+  border: var(--color-grey) 2px solid;
+  color: var(--color-grey);
+  cursor: no-drop;
+
+  &:hover {
+    background-color: var(--color-light-grey);
+  }
+}
+
 .Home-header {
   display: flex;
   align-content: center;
