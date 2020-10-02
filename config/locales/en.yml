@@ -12,6 +12,8 @@ en:
       schedule:
         date: Dates
         status: Status
+    user:
+      sort_index: Position in presence board
   presences: Presences
   schedules: Schedules
   admin: Admin
