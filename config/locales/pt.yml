@@ -32,6 +32,7 @@ pt:
         password_confirmation: Confirme a Password
         created_at: Data de Criação
         updated_at: Última atualização
+        sort_index: Posição no quadro de presenças
       schedule:
         date: Data
         status: Estado
