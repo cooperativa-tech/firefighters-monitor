@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   include CableReady::Broadcaster
+  before_validation :set_random_password
 
   authenticates_with_sorcery!
 
@@ -27,6 +28,12 @@ class User < ApplicationRecord
   end
 
   private
+
+  def set_random_password
+    return if self.admin? || self.password.present?
+    self.password = SecureRandom.hex
+    self.password_confirmation = self.password
+  end
 
   def next_enum(enum, current_value)
     enum_index = current_value ? enum.keys.index(current_value) : -1
