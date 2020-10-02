@@ -30,9 +30,10 @@ class User < ApplicationRecord
   private
 
   def set_random_password
-    return if self.admin? || self.password.present?
+    return if admin? || password.present?
+
     self.password = SecureRandom.hex
-    self.password_confirmation = self.password
+    self.password_confirmation = password
   end
 
   def next_enum(enum, current_value)
