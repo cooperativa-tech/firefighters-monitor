@@ -7,6 +7,7 @@ class UserDashboard < Administrate::BaseDashboard
     updated_at: Field::DateTime,
     username: Field::String,
     role: EnumField,
+    sort_index: Field::Number,
     password: Field::Password,
     password_confirmation: Field::Password
   }.freeze
@@ -14,6 +15,7 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     username
+    sort_index
     created_at
     updated_at
   ].freeze
@@ -22,14 +24,17 @@ class UserDashboard < Administrate::BaseDashboard
     id
     username
     role
+    sort_index
+    created_at
     updated_at
   ].freeze
 
   FORM_ATTRIBUTES = %i[
-    role
     username
     password
     password_confirmation
+    role
+    sort_index
   ].freeze
 
   COLLECTION_FILTERS = {}.freeze
