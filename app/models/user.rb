@@ -16,6 +16,8 @@ class User < ApplicationRecord
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
+  default_scope { order(sort_index: :asc) }
+
   def next_status
     next_enum(User.statuses, status)
   end

@@ -8,6 +8,7 @@ namespace :populate do
       User.create(
         username: username,
         role: "admin",
+        sort_index: 1,
         password: password,
         password_confirmation: password,
       )
