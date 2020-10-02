@@ -1,6 +1,7 @@
 .Presences {
   display: flex;
   flex-direction: row;
+  height: 100%;
 
   font-family: "Space Mono", monospace;
 }
@@ -110,7 +111,10 @@
 }
 
 .Presences-statuses {
+  display: flex;
+  flex-direction: column;
   width: 30%;
+  height: 100%;
   padding: 1rem;
 
   font-size: 28px;
@@ -153,4 +157,28 @@
   h3 {
     border-bottom: 4px solid var(--color-purple);
   }
+}
+
+.Presences-back {
+  align-self: flex-end;
+  padding: 0.5rem 2rem;
+  margin-top: auto;
+
+  background-color: var(--color-light-grey);
+  border: 2px solid black;
+  border-radius: 0.25rem;
+  color: var(--color-blue);
+  cursor: pointer;
+
+  font-family: var(--font-family-sans-serif);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+
+  transition: all 0.1s linear;
+}
+
+.Presences-back:active,
+.Presences-back:hover {
+  background-color: rgba(126, 178, 221, 0.1);
+  border-color: var(--color-blue);
 }
