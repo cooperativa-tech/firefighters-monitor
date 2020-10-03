@@ -1,0 +1,21 @@
+{
+  "addons": [
+    {
+      "plan": "heroku-postgresql"
+    },
+    {
+      "plan": "heroku-redis"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-ruby"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "bundle exec rake populate:admin_user"
+  }
+}
