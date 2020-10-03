@@ -19,20 +19,26 @@ export default class extends Controller {
 
   toggleStatus = async (event) => {
     event.preventDefault();
+    const button = event.currentTarget;
 
     this.showLoadingSpinner();
+    button.disabled = true;
     await this.stimulate("PresencesReflex#toggle_status", event.currentTarget);
+    button.disabled = false;
     this.removeLoadingSpinner();
   };
 
   toggleDutyType = async (event) => {
     event.preventDefault();
+    const button = event.currentTarget;
 
     this.showLoadingSpinner();
+    button.disabled = true;
     await this.stimulate(
       "PresencesReflex#toggle_duty_type",
       event.currentTarget
     );
+    button.disabled = false;
     this.removeLoadingSpinner();
   };
 

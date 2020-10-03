@@ -40,6 +40,11 @@
   user-select: none;
 }
 
+.Presences-user:disabled {
+  color: unset;
+  pointer-events: none;
+}
+
 .Presences-user--block {
   display: flex;
   flex-direction: column;
