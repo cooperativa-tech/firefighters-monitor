@@ -1,7 +1,5 @@
 class PresencesReflex < ApplicationReflex
   def toggle_status
-    raise "error" if Rails.env.production?
-
     user = User.find(element.dataset[:user_id])
     user_updater = UserUpdater.new(user: user)
 
