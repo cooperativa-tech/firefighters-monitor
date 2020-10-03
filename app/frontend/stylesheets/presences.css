@@ -1,6 +1,7 @@
 .Presences {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   height: 100%;
 
   font-family: "Space Mono", monospace;
