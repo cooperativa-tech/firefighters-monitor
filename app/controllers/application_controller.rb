@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_raven_context
-    Raven.user_context(username: current_user.username)
+    Raven.user_context(username: current_user.username) if current_user
     Raven.extra_context(params: params.to_unsafe_h, url: request.url)
   end
 end
