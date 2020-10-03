@@ -1,7 +1,8 @@
 <div class="Presences">
-  <div class="Presences-list" data-controller="presences" data-presences-current_user_id=<%= current_user.id %>>
+  <div id="presences-list" class="Presences-list" data-controller="presences" data-presences-current_user_id=<%= current_user.id %>>
     <% @users.each do |user| %>
       <button
+        id="presences-user-<%= user.id %>"
         class="Presences-user Presences-user--<%= user.status %>"
         data-user_id="<%= user.id %>"
         data-action="click->presences#toggleStatus contextmenu->presences#toggleDutyType"
