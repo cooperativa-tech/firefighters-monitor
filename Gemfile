@@ -17,6 +17,7 @@ gem "pundit"
 gem "rails", "~> 6.0.3"
 gem "redis", ">= 4.0", require: ["redis", "redis/connection/hiredis"]
 gem "sass-rails", ">= 6"
+gem "sentry-raven"
 gem "sorcery"
 gem "stimulus_reflex", "~> 3.2"
 gem "turbolinks", "~> 5"

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     root to: "users#index"
   end
 
-  resources :presences, only: [:index]
+  resources :presences, only: %i[index]
   resources :schedules, only: %i[new create]
 
   get "login" => "sessions#new", as: :login
