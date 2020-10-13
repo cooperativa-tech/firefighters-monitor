@@ -1,10 +1,13 @@
 module ApplicationCable
+  # We are identifying connections with locale and current user
+  # Why locale? Because otherwise, the same user with different locale
+  # settings might have random language switches
   class Connection < ActionCable::Connection::Base
-    identified_by :current_user, :unique_hash
+    identified_by :current_user, :locale
 
     def connect
       self.current_user = find_verified_user
-      self.unique_hash = SecureRandom.hex(64)
+      self.locale = request.session["locale"]
     end
 
     private

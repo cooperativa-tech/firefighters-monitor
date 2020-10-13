@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
-  include HttpAcceptLanguage::AutoLocale
   include Pundit
 
-  before_action :require_login, :set_raven_context
+  before_action :require_login, :set_raven_context, :set_locale
   rescue_from Pundit::NotAuthorizedError, with: :not_authorized
 
   private
@@ -18,5 +17,10 @@ class ApplicationController < ActionController::Base
   def set_raven_context
     Raven.user_context(username: current_user.username) if current_user
     Raven.extra_context(params: params.to_unsafe_h, url: request.url)
+  end
+
+  def set_locale
+    I18n.locale = http_accept_language.compatible_language_from(I18n.available_locales)
+    session[:locale] = I18n.locale
   end
 end
