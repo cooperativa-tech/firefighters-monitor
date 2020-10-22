@@ -5,4 +5,5 @@ require("@rails/activestorage").start();
 require("./application.css");
 require("../javascript/channels");
 require("../javascript/controllers");
-require("../javascript/datepicker");
+// TODO: Disable datepicker until we enable the scheduler function
+// require("../javascript/datepicker");

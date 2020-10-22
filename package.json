@@ -34,6 +34,7 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2",
+    "webpack-bundle-analyzer": "^3.9.0",
     "webpack-dev-server": "^3.11.0"
   }
 }
