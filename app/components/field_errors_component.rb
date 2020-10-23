@@ -1,5 +1,6 @@
 class FieldErrorsComponent < ViewComponent::Base
   def initialize(model, attribute)
+    super
     @errors = model.errors[attribute]
   end
 
