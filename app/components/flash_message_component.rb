@@ -1,5 +1,7 @@
 class FlashMessageComponent < ViewComponent::Base
   def initialize(flash:)
+    super
+
     @flash = flash
   end
 

@@ -83,9 +83,7 @@ RSpec.feature "Presences", js: true do
     yield
   end
 
-  def within_second_window
-    Capybara.using_driver(:selenium_chrome_private) do
-      yield
-    end
+  def within_second_window(&block)
+    Capybara.using_driver(:selenium_chrome_private, &block)
   end
 end
