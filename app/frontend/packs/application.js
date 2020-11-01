@@ -6,3 +6,4 @@ require("./application.css");
 require("../javascript/channels");
 require("../javascript/controllers");
 require("../javascript/datepicker");
+require("../javascript/idleHandler");

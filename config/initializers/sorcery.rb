@@ -4,7 +4,7 @@
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging,
 # :magic_login, :external
-Rails.application.config.sorcery.submodules = []
+Rails.application.config.sorcery.submodules = [:remember_me]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -29,7 +29,7 @@ Rails.application.config.sorcery.configure do |config|
   # Allow the remember_me cookie to be set through AJAX
   # Default: `true`
   #
-  # config.remember_me_httponly =
+  config.remember_me_httponly = false
 
   # Set token randomness. (e.g. user activation tokens)
   # The length of the result string is about 4/3 of `token_randomness`.
@@ -285,7 +285,7 @@ Rails.application.config.sorcery.configure do |config|
     # logins/logouts (to support remembering on multiple browsers simultaneously).
     # Default: false
     #
-    # user.remember_me_token_persist_globally =
+    user.remember_me_token_persist_globally = true
 
     # -- user_activation --
     # The attribute name to hold activation state (active/pending).
