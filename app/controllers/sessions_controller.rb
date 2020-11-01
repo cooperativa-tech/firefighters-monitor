@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    logged_in = login(user_params[:username], user_params[:password])
+    logged_in = login(user_params[:username], user_params[:password], true)
 
     if logged_in
       redirect_to(root_path, notice: "Login successful")

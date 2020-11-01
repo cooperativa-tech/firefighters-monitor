@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include Pundit
 
   before_action :require_login, :set_raven_context, :set_locale
+  after_action :refresh_session
   rescue_from Pundit::NotAuthorizedError, with: :not_authorized
 
   private
@@ -22,5 +23,9 @@ class ApplicationController < ActionController::Base
   def set_locale
     I18n.locale = http_accept_language.compatible_language_from(I18n.available_locales)
     session[:locale] = I18n.locale
+  end
+
+  def refresh_session
+    ActiveRecord::SessionStore::Session.find_by(session_id: session.id).touch # rubocop:disable all
   end
 end
