@@ -18,7 +18,7 @@ gem "rails", "~> 6.1"
 gem "redis", ">= 4.0", require: ["redis", "redis/connection/hiredis"]
 gem "sass-rails", ">= 6"
 gem "sentry-raven"
-gem "sorcery", github: "Sorcery/sorcery", ref: "443e614"
+gem "sorcery"
 gem "stimulus_reflex", "~> 3.4"
 gem "turbo-rails"
 gem "validates_timeliness"
