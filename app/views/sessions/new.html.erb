@@ -1,7 +1,7 @@
 <div>
   <h2>Login</h2>
 
-  <%= form_with model: @user, url: login_path, method: :post do |f| %>
+  <%= form_with model: @user, url: login_path, method: :post, remote: false do |f| %>
     <div>
       <%= f.label :username %>
       <%= f.text_field :username %>

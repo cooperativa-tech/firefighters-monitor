@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     else
       flash.now[:alert] = "Login failed"
 
-      render action: "new", status: :unauthorized
+      render action: "new", status: :unprocessable_entity
     end
   end
 

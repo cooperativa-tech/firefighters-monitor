@@ -34,5 +34,7 @@ module FirefightersMonitor
     config.generators.system_tests = nil
 
     config.i18n.available_locales = %I[en pt]
+
+    config.action_view.form_with_generates_remote_forms = false
   end
 end
