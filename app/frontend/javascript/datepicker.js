@@ -1,7 +1,7 @@
-const flatpickr = require("flatpickr");
+const flatpickr = require("flatpickr").default;
 require("flatpickr/dist/flatpickr.min.css");
 
-document.addEventListener("turbolinks:load", () => {
+document.addEventListener("turbo:load", () => {
   flatpickr(".DatePicker-date", { enableTime: false });
   flatpickr(".DatePicker-datetime", { enableTime: true });
 });

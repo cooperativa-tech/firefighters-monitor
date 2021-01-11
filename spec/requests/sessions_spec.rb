@@ -33,7 +33,7 @@ RSpec.describe SessionsController do
       post login_path, params: { user: { username: user.username, password: "bad_password" } }
 
       expect(response).to render_template(:new)
-      expect(response).to have_http_status(:unauthorized)
+      expect(response).to have_http_status(:unprocessable_entity)
     end
   end
 

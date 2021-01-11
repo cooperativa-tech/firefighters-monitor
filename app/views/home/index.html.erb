@@ -12,7 +12,7 @@
   <% if current_user.admin? %>
   <div class="Home-menu">
       <%= link_to t("presences"), presences_path, { class:"Home-link" } %>
-      <%= link_to t("admin"), admin_users_path, { class: "Home-link", 'data-turbolinks': false } %>
+      <%= link_to t("admin"), admin_users_path, { class: "Home-link", 'data-turbo': false } %>
   <% end %>
   <%= link_to t("schedules"), root_path, { class: "Home-link Home-link--disabled" } %>
 </div>

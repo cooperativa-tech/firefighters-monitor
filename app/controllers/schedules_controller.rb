@@ -15,7 +15,7 @@ class SchedulesController < ApplicationController
     else
       flash.now[:alert] = "Invalid!"
 
-      render action: "new"
+      render action: "new", status: :unprocessable_entity
     end
   end
 

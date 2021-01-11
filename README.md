@@ -14,7 +14,9 @@ To run this project you will need the following tools and runtimes:
 - Chromedriver
 - Redis
 
-Here at our team, we use [asdf-vm](https://github.com/asdf-vm/asdf) to manage our Ruby and Node versions, we recommend that heavily. You can install Postgres and Redis with `homebrew` and Chromedriver with `homebrew cask`.
+Here at our team, we use [asdf-vm](https://github.com/asdf-vm/asdf) to manage our Ruby and Node versions, we recommend that heavily. You can install Postgres and Redis with `homebrew` and Chromedriver with `homebrew cask`, if you are using MacOS. `linuxbrew` might have issues instaling those.
+
+If using Linux, we recommend your native package management tool.
 
 Our `bin/setup` script will handle installing Ruby and Node if you have [asdf-vm](https://github.com/asdf-vm/asdf) properly installed.
 
