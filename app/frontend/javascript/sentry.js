@@ -9,12 +9,4 @@ if (process.env.NODE_ENV === "production") {
     tracesSampleRate: 1.0,
     environment: "production",
   });
-
-  window.onerror = (_message, _source, _lineno, _colno, _error) => {
-    window.location = "500.html";
-  };
-
-  window.addEventListener("unhandledrejection", () => {
-    window.location = "500.html";
-  });
 }
