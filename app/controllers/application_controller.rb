@@ -26,6 +26,6 @@ class ApplicationController < ActionController::Base
   end
 
   def refresh_session
-    ActiveRecord::SessionStore::Session.find_by(session_id: session.id).touch # rubocop:disable all
+    ActiveRecord::SessionStore::Session.find_by(session_id: session.id&.private_id)&.touch # rubocop:disable all
   end
 end
