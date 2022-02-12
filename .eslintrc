@@ -2,7 +2,7 @@
   "plugins": [
     "prettier"
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "extends": [
     "airbnb-base",
     "prettier"
