@@ -1,9 +1,0 @@
-require("../javascript/sentry");
-require("@rails/ujs").start();
-require("@hotwired/turbo-rails").Turbo.start();
-require("@rails/activestorage").start();
-require("./application.css");
-require("../javascript/channels");
-require("../javascript/controllers");
-require("../javascript/datepicker");
-require("../javascript/idleHandler");

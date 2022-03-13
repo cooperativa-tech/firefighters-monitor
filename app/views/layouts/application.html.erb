@@ -5,8 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= javascript_pack_tag "application", "data-turbo-track": "reload" %>
-    <%= stylesheet_pack_tag "application", media: "all", "data-turbo-track": "reload" if Webpacker.config.extract_css? %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 

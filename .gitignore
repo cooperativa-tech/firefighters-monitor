@@ -41,3 +41,6 @@ yarn-debug.log*
 .yarn-integrity
 .env
 dump.rdb
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

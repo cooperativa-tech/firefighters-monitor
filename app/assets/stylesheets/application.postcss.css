@@ -1,5 +1,10 @@
+@import "flatpickr/dist/flatpickr.min.css";
 @import "../../components/**/*.css";
-@import "../stylesheets/**/*.css";
+
+@import "./button.css";
+@import "./home.css";
+@import "./presences.css";
+@import "./reset.css";
 
 body.wait,
 body.wait * {

@@ -7,10 +7,12 @@ gem "activerecord-session_store"
 gem "administrate", "~> 0.17"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "cable_ready", "~> 4.1"
+gem "cssbundling-rails", "~> 1.1"
 gem "delayed_job"
 gem "delayed_job_active_record"
 gem "hiredis"
 gem "http_accept_language"
+gem "jsbundling-rails", "~> 1.0"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 4.3"
 gem "pundit", "~> 2.1"
@@ -22,7 +24,6 @@ gem "sorcery", "~> 0.16"
 gem "stimulus_reflex", "~> 3.4"
 gem "validates_timeliness"
 gem "view_component"
-gem "webpacker", "~> 5.2.1"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]

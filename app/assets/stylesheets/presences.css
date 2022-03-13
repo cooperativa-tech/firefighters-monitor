@@ -126,41 +126,41 @@
   font-size: 28px;
   line-height: 40px;
 
-  h3 {
+  & h3 {
     margin: 0 0 1rem;
   }
 
-  > * {
+  & > * {
     margin-bottom: 2rem;
   }
 }
 
 .Presences-statuses--available {
-  h3 {
+  & h3 {
     border-bottom: 4px solid var(--color-leaf-green);
   }
 }
 
 .Presences-statuses--service {
-  h3 {
+  & h3 {
     border-bottom: 4px solid var(--color-fire-red);
   }
 }
 
 .Presences-statuses--picket {
-  h3 {
+  & h3 {
     border-bottom: 4px solid var(--color-yellow);
   }
 }
 
 .Presences-statuses--elac {
-  h3 {
+  & h3 {
     border-bottom: 4px solid var(--color-roasted-yellow);
   }
 }
 
 .Presences-statuses--eip {
-  h3 {
+  & h3 {
     border-bottom: 4px solid var(--color-purple);
   }
 }
