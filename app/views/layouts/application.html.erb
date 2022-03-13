@@ -14,5 +14,7 @@
     <%= render(FlashMessageComponent.new(flash: flash)) %>
 
     <%= yield %>
+
+    <%= javascript_include_tag "sentry", "data-turbo-track": "reload", async: true %>
   </body>
 </html>

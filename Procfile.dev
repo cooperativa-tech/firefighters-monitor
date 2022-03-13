@@ -3,4 +3,4 @@ redis: (redis-cli ping && echo "Redis already running" && tail -f /dev/null) || 
 delayed_job: bundle exec rake jobs:work
 guard: bundle exec guard -i
 css: yarn build:css --watch
-js: yarn build --watch
+js: yarn build --watch --mode development

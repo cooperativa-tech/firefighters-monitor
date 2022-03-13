@@ -21,6 +21,7 @@ gem "redis", ">= 4.0", require: ["redis", "redis/connection/hiredis"]
 gem "sass-rails", ">= 6"
 gem "sentry-raven", "~> 3.1"
 gem "sorcery", "~> 0.16"
+gem "sprockets-rails", "~> 3.4.2"
 gem "stimulus_reflex", "~> 3.4"
 gem "validates_timeliness"
 gem "view_component"
