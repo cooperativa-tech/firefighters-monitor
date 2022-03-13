@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.0.3"
 
 gem "activerecord-session_store"
-gem "administrate"
+gem "administrate", "~> 0.17"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "cable_ready", "~> 4.1"
 gem "delayed_job"
@@ -13,14 +13,13 @@ gem "hiredis"
 gem "http_accept_language"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 4.3"
-gem "pundit"
+gem "pundit", "~> 2.1"
 gem "rails", "~> 6.1"
 gem "redis", ">= 4.0", require: ["redis", "redis/connection/hiredis"]
 gem "sass-rails", ">= 6"
-gem "sentry-raven"
-gem "sorcery"
+gem "sentry-raven", "~> 3.1"
+gem "sorcery", "~> 0.16"
 gem "stimulus_reflex", "~> 3.4"
-gem "turbo-rails"
 gem "validates_timeliness"
 gem "view_component"
 gem "webpacker", "~> 5.2.1"
@@ -34,6 +33,7 @@ group :development, :test do
   gem "rubocop"
   gem "rubocop-performance"
   gem "rubocop-rails"
+  gem "rubocop-rspec"
 end
 
 group :development do
