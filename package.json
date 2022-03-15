@@ -11,9 +11,9 @@
   "dependencies": {
     "@babel/preset-env": "^7.16.11",
     "@hotwired/turbo-rails": "^7.0.0-beta.5",
-    "@rails/actioncable": "^6.1.5",
-    "@rails/activestorage": "^6.1.5",
-    "@rails/ujs": "^6.1.5",
+    "@rails/actioncable": "^7.0.2",
+    "@rails/activestorage": "^7.0.2",
+    "@rails/ujs": "^7.0.2",
     "@sentry/browser": "^6.18.2",
     "@sentry/tracing": "^6.18.2",
     "autoprefixer": "^10.4.2",
@@ -33,7 +33,7 @@
     "webpack-cli": "^4.9.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.5",
+    "@babel/core": "^7.17.7",
     "@babel/eslint-parser": "^7.17.0",
     "eslint": "^8.11.0",
     "eslint-config-airbnb-base": "^15.0.0",

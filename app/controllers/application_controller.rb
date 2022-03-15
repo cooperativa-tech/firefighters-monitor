@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  include Pundit
+  include Pundit::Authorization
 
   before_action :require_login, :set_raven_context, :set_locale
   after_action :refresh_session
