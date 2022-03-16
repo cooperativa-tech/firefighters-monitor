@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
   end
 
   def not_authorized
-    raise ActionController::RoutingError, "Not Found" unless current_user&.admin?
+    flash[:alert] = "You are not authorized to perform this action."
+    redirect_to(request.referer || root_path)
   end
 
   def set_raven_context

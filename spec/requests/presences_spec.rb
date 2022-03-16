@@ -13,13 +13,13 @@ RSpec.describe PresencesController do
       end
     end
 
-    it "gives a not found error if user is not an admin" do
+    it "redirects to root if not admin" do
       users = create_list(:user, 3)
       login_user(users.first)
 
-      expect do
-        get presences_path
-      end.to raise_error(ActionController::RoutingError)
+      get presences_path
+
+      expect(response).to redirect_to(root_path)
     end
 
     it "sends user to login screen if not logged in" do
