@@ -1,5 +1,7 @@
 # Firefighters Monitor
 
+**Deprecated, replaced by [firefighters-monitor-lite](https://github.com/cooperativa-tech/firefighters-monitor-lite)**
+
 This is a simple Rails app that offers monitoring functionalities for firefighter headquarters. It's a port of a previous project that was powering the Firefighters Headquarters at Esposende, Portugal.
 
 Still a work in progress, will post more info on how it works later.
